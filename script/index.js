@@ -1,5 +1,16 @@
 const array = [];
 
+const loadSpinner = status => {
+    if(status === true){
+        document.getElementById('spinner').classList.remove('hidden');
+        document.getElementById('plant-container').classList.add('hidden');
+    }
+    else{
+        document.getElementById('spinner').classList.add('hidden');
+        document.getElementById('plant-container').classList.remove('hidden');
+    }
+}
+
 const loadWordDetails = (id) => {
   const url = `https://openapi.programming-hero.com/api/plant/${id}`;
   fetch(url)
@@ -103,6 +114,7 @@ const displayArray = (array) => {
   }
 };
 const loadAllCategories = () => {
+    loadSpinner(true);
   const url = "https://openapi.programming-hero.com/api/categories";
   fetch(url)
     .then((response) => response.json())
@@ -134,10 +146,12 @@ const displayAllCategories = (data) => {
           .classList.add("bg-[#15803D]", "text-white", "rounded-lg");
       });
   });
+  loadSpinner(false);
 };
 loadAllCategories();
 
 const loadAllPlants = () => {
+    loadSpinner(true);
   const url = "https://openapi.programming-hero.com/api/plants";
   fetch(url)
     .then((response) => response.json())
@@ -154,11 +168,13 @@ const displayAllPlants = (data) => {
         displayArray(array);
       });
   });
+  loadSpinner(false);
 };
 
 loadAllPlants();
 
 const loadByCategories = (id) => {
+    loadSpinner(true);
   const url = `https://openapi.programming-hero.com/api/category/${id}`;
   fetch(url)
     .then((response) => response.json())
@@ -175,4 +191,5 @@ const displayByCategories = (data) => {
         displayArray(array);
       });
   });
+  loadSpinner(false);
 };

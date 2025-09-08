@@ -14,7 +14,7 @@
 
 <body class="bg-[#F0FDF4]">
     <header id="header">
-        <div class="navbar bg-base-100 shadow-sm bg-[#15803D] text-white">
+        <div class="navbar bg-base-100 shadow-sm bg-[#15803D] text-white md:px-8">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -63,14 +63,18 @@
         </div>
     </section>
 
-    <section>
+    <section id="spinner" class="flex justify-center items-center py-10 hidden">
+        <span class="loading loading-spinner loading-xl"></span>
+    </section>
+
+    <section id="plant-container">
         <h3 class="text-center font-bold text-2xl">Choose Your Trees</h3>
-        <div class="grid grid-cols-5 gap-4 container mx-auto">
+        <div class="md:grid grid-cols-5 gap-4 container mx-auto">
             <div class="p-2">
                 <p class="font-bold text-xl">Categories</p>
                 <ul id="category-container"></ul>
             </div>
-            <div id="card-container" class="col-span-3 grid grid-cols-3 gap-3"></div>
+            <div id="card-container" class="col-span-3 md:grid grid-cols-3 gap-3"></div>
             <div class="rounded-lg p-2 bg-white">
                 <p class="font-bold text-xl">Your Cart</p>
                 <div id="add-to-cart-container">
