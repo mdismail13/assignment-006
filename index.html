@@ -86,9 +86,11 @@
     <section class="mt-24 pb-24">
         <h3 class="text-center font-bold text-2xl mb-8">About the Campaign</h3>
         <div class="flex flex-col-reverse md:flex-row max-w-5xl mx-auto justify-center items-center gap-8">
-            <img src="./assets/about.png" alt="" class="flex-1 block w-full">
+            <img src="./assets/about.png" alt="" class="flex-1 block">
             <div class="flex-1">
-                <p class="mb-4">Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.</p>
+                <p class="mb-4">Green Earth is a global tree plantation initiative dedicated to fighting climate change.
+                    Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help
+                    restore forests, create habitats for wildlife, and combat global warming.</p>
                 <ul class="list-disc pl-8">
                     <li>Restoration of natural habitats</li>
                     <li>Improvement of air quality</li>
@@ -116,19 +118,40 @@
         </div>
     </section>
 
-<!-- Open the modal using ID.showModal() method -->
-<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
-<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-  <div class="modal-box">
-    <div id="modal-box"></div>
-    <div class="modal-action">
-      <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
-        <button class="btn">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
+    <section class="bg-[#166534] py-[100px]">
+        <h3 class="mb-8 text-xl text-center font-semibold text-white">Plant a Tree Today</h3>
+        <div class="flex flex-col justify-center items-center p-10 bg-[#15803D] rounded-lg shadow-xl max-w-lg mx-auto space-y-4">
+            <input type="text" placeholder="Your Name" class="input w-full " />
+            <input type="text" placeholder="Your Email Address" class="input w-full" />
+            <select class="select w-full">
+                <option disabled selected>Number of Trees</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            <button class="text-[#15803D] py-3 rounded-l-full rounded-r-full bg-[#FACC15] w-full font-semibold" type="button">Donate Now</button>
+        </div>
+    </section>
+
+    <footer class="text-center py-6 bg-[#14532D]">
+        <p class="text-white">© 2025 Green Earth. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div id="modal-box"></div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
 
 
     <script src="./script/index.js"></script>
