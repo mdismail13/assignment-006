@@ -1,10 +1,31 @@
 const array = [];
+
+const loadWordDetails = (id) => {
+  const url = `https://openapi.programming-hero.com/api/plant/${id}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => displayWordDetails(data.plants));
+};
+
+const displayWordDetails = (object) => {
+  const modalBox = document.getElementById("modal-box");
+  modalBox.innerHTML = `
+        <div>
+            <p><span class="font-bold">Name :</span> ${object.name}</p>
+            <p><span class="font-bold">Details :</span> ${object.description}</p>
+            <p><span class="font-bold">Category :</span> ${object.category}</p>
+            <p><span class="font-bold">Price :</span> ${object.price}</p>
+        </div>
+    `;
+  document.getElementById("my_modal_5").showModal();
+};
+
 const cardMaker = (object) => {
   const div = document.createElement("div");
   div.classList.add("p-3", "space-y-3", "bg-white", "rounded-lg");
   div.innerHTML = `
         <img src='${object.image}' alt="" class = 'rounded-lg'>
-        <h3 class="font-bold cursor-pointer">${object.name}</h3>
+        <h3 onclick="loadWordDetails(${object.id})" class="font-bold cursor-pointer">${object.name}</h3>
         <p class="text-sm">${object.description}</p>
         <div class="flex justify-between items-center">
             <p class="font-bold text-[#15803D] py-1 px-3 bg-[#DCFCE7] rounded-l-full rounded-r-full">${object.category}</p>
