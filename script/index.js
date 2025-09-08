@@ -22,6 +22,7 @@ const displayWordDetails = (object) => {
   const modalBox = document.getElementById("modal-box");
   modalBox.innerHTML = `
         <div>
+            <img src='${object.image}' alt="" class ='rounded-lg h-[300px] w-full'>
             <p><span class="font-bold">Name :</span> ${object.name}</p>
             <p><span class="font-bold">Details :</span> ${object.description}</p>
             <p><span class="font-bold">Category :</span> ${object.category}</p>
