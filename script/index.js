@@ -193,3 +193,8 @@ const displayByCategories = (data) => {
   });
   loadSpinner(false);
 };
+
+
+document.getElementById('green-earth-logo').addEventListener('click', () => {
+    window.location.href = 'index.html';
+})
